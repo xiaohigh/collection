@@ -44,9 +44,10 @@ class SingerCommand extends Command
     public function handle()
     {
         //字母
-        foreach(range('B', 'Z') as $letter) {
+        foreach(range('A', 'Z') as $letter) {
             if($this->redis->sismember('success_singers_letter', $letter)) {
                 $this->info("字母 $letter 已经采集过");
+                continue;
             }
 
             //获取总页数
@@ -101,7 +102,6 @@ class SingerCommand extends Command
                     $singer -> area = $value['Farea'];
 
                     $singer->save();
-                    sleep(1);
 
                     //记录写入状态 success_singer qq_id
                     $this->redis->sadd('success_singers', $value['Fsinger_id']);

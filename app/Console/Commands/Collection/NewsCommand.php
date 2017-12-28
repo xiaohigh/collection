@@ -5,6 +5,7 @@ namespace App\Console\Commands\Collection;
 use App\Models\Collection\News;
 use Goutte\Client;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 
 class NewsCommand extends Command
@@ -114,7 +115,8 @@ class NewsCommand extends Command
 
                 //保存
                 $news->save();
-                sleep(1);
+                Log::info(\memory_get_usage());
+
 
                 //将hash值存入到redis集合中  news_success
                 $redis->sadd('news_success', $hash);
