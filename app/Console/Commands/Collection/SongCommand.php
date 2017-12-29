@@ -59,7 +59,7 @@ class SongCommand extends Command
      */
     public function handle()
     {
-        $albums = Album::where('id', '<', 10)->get(); 
+        $albums = Album::all(); 
 
         foreach ($albums as $album) {
             //检测

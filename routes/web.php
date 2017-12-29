@@ -30,4 +30,8 @@ Route::get('/get-song', function(){
 	Artisan::call('collection:song');
 });
 
+Route::get('/get-lyric', function(){
+	Artisan::call('collection:lyric');
+});
+
 

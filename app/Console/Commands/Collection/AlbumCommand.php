@@ -57,7 +57,7 @@ class AlbumCommand extends Command
      */
     public function handle()
     {
-        $singers = Singer::where('id','<',10)->get();
+        $singers = Singer::all();
 
         //检测歌手信息
         if($singers->count() <= 0){
@@ -122,6 +122,14 @@ class AlbumCommand extends Command
             Log::info("歌手 {$singer->name} -- {$singer->qq_id} 专辑获取完成");
             $this->info("歌手 {$singer->name} -- {$singer->qq_id} 专辑获取完成");
         }
+    }
+
+    /**
+     * 获取单个专辑的歌曲
+     */
+    private function getOne()
+    {
+
     }
 
     /**
