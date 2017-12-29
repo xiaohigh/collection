@@ -10,9 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return 'iloveyou';
 });
 
 Route::get('/get-news', function(){
@@ -26,3 +25,9 @@ Route::get('/get-singers', function(){
 Route::get('/get-album', function(){
 	Artisan::call('collection:album');
 });
+
+Route::get('/get-song', function(){
+	Artisan::call('collection:song');
+});
+
+
