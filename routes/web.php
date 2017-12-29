@@ -22,3 +22,7 @@ Route::get('/get-news', function(){
 Route::get('/get-singers', function(){
 	Artisan::call('collection:singer');
 });
+
+Route::get('/get-album', function(){
+	Artisan::call('collection:album');
+});

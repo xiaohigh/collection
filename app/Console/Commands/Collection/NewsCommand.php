@@ -7,7 +7,6 @@ use Goutte\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
-
 class NewsCommand extends Command
 {
     /**
